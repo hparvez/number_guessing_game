@@ -43,7 +43,7 @@ if __name__ == "__main__":
                 raise ValueOutOfRange
             num_guesses += 1
         
-        # Example of raising an error within the standard library
+        # Example of handlnig an error within the standard library
         except ValueError:
             print("Please enter a valid integer")
         
@@ -62,7 +62,7 @@ if __name__ == "__main__":
             elif guess < target_number:
                 print("Too low! Try again")
             else:
-                print("Woo-hoo! You got it!")
+                print(f"Woo-hoo! You got it! The number was {target_number}")
                 break
         
         # This code block gets executed everytime, irrespective of errors
