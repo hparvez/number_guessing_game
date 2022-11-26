@@ -5,7 +5,13 @@ class ValueOutOfRange(Exception):
     """
     Exception: Value is out of the defined range
     """
-    pass
+    def __init__(self, number, minimum, maximum):
+        self.number = number
+        self.minimum = minimum
+        self.maximum = maximum
+        
+    def __str__(self):
+        return f"Value of {self.number} is not in the range {self.minimum} to {self.maximum}"
 
 
 def take_guess() -> int:
@@ -40,7 +46,7 @@ if __name__ == "__main__":
             guess = take_guess()
             if guess not in range(minimum, maximum + 1):
                 # Example of raising a custom exception
-                raise ValueOutOfRange
+                raise ValueOutOfRange(guess, minimum, maximum)
             num_guesses += 1
         
         # Example of handlnig an error built into python
@@ -48,8 +54,8 @@ if __name__ == "__main__":
             print("Please enter a valid integer")
         
         # Handling the custom exception
-        except ValueOutOfRange:
-            print(f"Value is not in the range {minimum} to {maximum}")
+        except ValueOutOfRange as e:
+            print(e)
         
         # Example of a "catch-all" exception
         except Exception as e:
