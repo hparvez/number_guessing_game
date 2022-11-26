@@ -43,7 +43,7 @@ if __name__ == "__main__":
                 raise ValueOutOfRange
             num_guesses += 1
         
-        # Example of handlnig an error within the standard library
+        # Example of handlnig an error built into python
         except ValueError:
             print("Please enter a valid integer")
         
