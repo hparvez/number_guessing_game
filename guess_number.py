@@ -51,7 +51,7 @@ if __name__ == "__main__":
         except ValueOutOfRange:
             print(f"Value is not in the range {minimum} to {maximum}")
         
-        # Example of a "catch-al" exception
+        # Example of a "catch-all" exception
         except Exception as e:
             print(e)
         
